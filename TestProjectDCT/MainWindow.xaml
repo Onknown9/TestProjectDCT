@@ -1,0 +1,32 @@
+﻿<Window x:Class="TestProjectDCT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestProjectDCT"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="525" x:Name="Window" Style="{StaticResource WindowStyle}">
+    <Grid Width="523">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="475"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Height="335" Grid.Column="0" Grid.RowSpan="3">
+            <Button Click="Button_Home_Click" Height="45">
+                <TextBlock Text="Home Page" TextWrapping="Wrap"/>
+            </Button>
+            <Button Click="Button_List_Click" Height="45">
+                <TextBlock Text="Crypto List" TextWrapping="Wrap"/>
+            </Button>
+            <Button Height="45" Click="Button_Details_Click">
+                <TextBlock Text="Crypto Details" TextWrapping="Wrap"/>
+            </Button>
+        </StackPanel>
+        <Button Height="45" VerticalAlignment="Bottom" Click="Button_Settings_Click">
+            <TextBlock Text="Settings"/>
+        </Button>
+
+        <Frame x:Name="frame" Width="475" NavigationUIVisibility="Hidden" Grid.Column="1" Style="{StaticResource FrameStyle}"/>
+
+    </Grid>
+</Window>

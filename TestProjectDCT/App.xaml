@@ -1,0 +1,103 @@
+﻿<Application x:Class="TestProjectDCT.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TestProjectDCT"
+             xmlns:properties="clr-namespace:TestProjectDCT.Properties"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--style for window-->
+        <Style TargetType="{x:Type Window}" x:Key="WindowStyle">
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=TestProjectDCT}" Value="Black">
+                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="TextBlock.Foreground" Value="White"/>
+                </DataTrigger>
+
+
+
+
+                <!-- light mode region -->
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=TestProjectDCT}" Value="Light">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="TextBlock.Foreground" Value="Black"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <!--style for frame-->
+        <Style TargetType="{x:Type Frame}" x:Key="FrameStyle">
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=TestProjectDCT}" Value="Black">
+                    <Setter Property="Background" Value="#FF3E3E3E"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="TextBlock.Foreground" Value="White"/>
+                </DataTrigger>
+
+
+
+
+                <!-- light mode region -->
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=TestProjectDCT}" Value="Light">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="TextBlock.Foreground" Value="Black"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        
+        
+        <!--style for pages-->
+
+        <Style TargetType="{x:Type Page}" x:Key="PageStyle">
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=TestProjectDCT}" Value="Black">
+                    <Setter Property="Background" Value="#FF3E3E3E"/>
+                    <Setter Property="Foreground" Value="LightSlateGray"/>
+                    <Setter Property="TextBlock.Foreground" Value="White"/>
+                </DataTrigger>
+
+
+
+
+                <!-- light mode region -->
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=TestProjectDCT}" Value="Light">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="TextBlock.Foreground" Value="Black"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        
+        
+        
+        <!--style for buttons-->
+        <Style TargetType="{x:Type Button}">
+            <Style.Triggers>
+                <!-- black mode region -->
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=TestProjectDCT}" Value="Black">
+                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="BorderBrush" Value="White"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger>
+
+
+
+
+                <!-- light mode region -->
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=TestProjectDCT}" Value="Light">
+                    <Setter Property="Background" Value="Teal"/>
+                    <Setter Property="BorderBrush" Value="Teal"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+
+    </Application.Resources>
+</Application>

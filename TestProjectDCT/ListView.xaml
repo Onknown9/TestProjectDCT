@@ -1,0 +1,42 @@
+﻿<Page x:Class="TestProjectDCT.ListView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestProjectDCT" d:DataContext="{d:DesignInstance Type=local:AppViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="475"
+      Title="ListView" Style="{StaticResource PageStyle}">
+
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="275"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Column="0" ItemsSource="{Binding Cryptos}"
+                 SelectedItem="{Binding SelectedCrypto}"   >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel >
+                        <TextBlock FontSize="18" Text="{Binding Path=Name}" />
+                        <TextBlock  Text="{Binding Path=Id}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Grid.Column="1" DataContext="{Binding SelectedCrypto}">
+            <TextBlock Text="Selected Item"  />
+            <TextBlock Text="Name" />
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Symbol" />
+            <TextBox Text="{Binding Symbol, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Price in $" />
+            <TextBox Text="{Binding PriceUsd, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+        
+        
+    </Grid>
+</Page>

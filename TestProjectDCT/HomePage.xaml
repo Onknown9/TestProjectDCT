@@ -1,0 +1,30 @@
+﻿<Page x:Class="TestProjectDCT.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestProjectDCT" d:DataContext="{d:DesignInstance Type=local:AppViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="475"
+      Title="HomePage" Style="{StaticResource PageStyle}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="310*"/>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="1" ItemsSource="{Binding TopCryptos}"
+                 SelectedItem="{Binding SelectedCrypto}"   >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel >
+                        <TextBlock FontSize="18" Text="{Binding Path=Name}" />
+                        <TextBlock  Text="{Binding Path=Id}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Top 10 Cryptocurrencies" FontSize="20" HorizontalAlignment="Center" FontFamily="Arial"/>
+        
+    </Grid>
+</Page>

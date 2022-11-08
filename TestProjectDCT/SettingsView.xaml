@@ -1,0 +1,21 @@
+﻿<Page x:Class="TestProjectDCT.SettingsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestProjectDCT"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="475"
+      Title="SettingsView">
+
+    <GroupBox BorderThickness="0">
+        <UniformGrid Rows ="2" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Choose Mode" FontSize="15" FontFamily="Arial" Height="30"/>
+                <RadioButton x:Name="LightMode" Content="Light Mode" Height="30" GroupName="ModesSelection" Checked="LightMode_Checked"/>
+                <RadioButton x:Name="BlackMode" Content="Black Mode" Height="30"  GroupName="ModesSelection" Checked="BlackMode_Checked"/>
+            </StackPanel>
+        </UniformGrid>
+        
+    </GroupBox>
+</Page>
